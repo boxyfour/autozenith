@@ -1,0 +1,14 @@
+discord-config:
+  discord-channels:
+  - 0
+  - 11111111
+  discord-role: 0
+  discord-tokens:
+  - a
+  - b
+
+droplet-config:
+  auth-token: 
+  droplet-amount: 1
+  droplet-datacenter: nyc1
+  droplet-prefix: auto-zenith-

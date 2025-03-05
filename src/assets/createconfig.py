@@ -1,0 +1,56 @@
+import requests
+import json
+import os
+import sys
+
+def create_config(token, channel, role, relaychannel):
+    config = {}
+    if relaychannel == None:
+        print("woah")
+    ip = requests.get("https://api.ipify.org", timeout=10)
+
+    proxy_address = ip.text
+
+    config["server"] = {
+        "bind": {
+            "port": 25565,
+        },
+        "proxyIP": proxy_address,
+    }
+
+    if token:
+        config["discord"] = {
+            "enable": True,
+            "token": token,
+            "channelId": channel,
+            "accountOwnerRoleId": role,
+        }
+        if relaychannel:
+            config["discord"]["chatRelay"] = {
+                "enable": True,
+                "channelId": relaychannel
+            }
+
+    current_dir = os.getcwd()
+
+    parent_dir = os.path.dirname(current_dir)
+
+    os.chdir(parent_dir)
+
+    with open("config.json", "w") as f:
+        f.write(json.dumps(config, indent=2))
+
+        print("config.json written successfully!")
+
+
+args = sys.argv
+
+for i in args:
+    print(i)
+
+if len(args) > 5:
+    relay = args[4]
+else:
+    relay = None
+
+create_config(args[1], args[2], args[3], relay)
