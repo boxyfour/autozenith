@@ -27,11 +27,5 @@ cd "$ZENITH_PATH/assets"
 
 python3 -m venv venv
 
-/root/ZenithProxy/autozenith/src/assets/venv/bin/pip install . 
+venv/bin/pip install . 
 
-
-cd $ZENITH_PATH
-rm -r autozenith
-
-tmux new-session -d -s session
-tmux new-window -t session -d 'bash ./install.sh'
