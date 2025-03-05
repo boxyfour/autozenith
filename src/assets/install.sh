@@ -13,18 +13,20 @@ unzip ZenithProxy-launcher-linux-amd64.zip
 
 ZENITH_PATH='/root/ZenithProxy'
 
+cd /root/ZenithProxy 
+git clone https://github.com/boxyfour/autozenith 
+cd autozenith 
+mv src/assets $ZENITH_PATH 
+
 cd "$ZENITH_PATH/autozenith"
 
 python3 -m venv venv
 
 /root/ZenithProxy/autozenith/src/assets/venv/bin/pip install . 
 
-cd /root/ZenithProxy 
-git clone https://github.com/boxyfour/autozenith 
-cd autozenith 
-mv src/assets $ZENITH_PATH 
 
 cd $ZENITH_PATH
 rm -r autozenith
 
-assets/install.sh
+tmux new-session -d -s session
+tmux new-window -t session -d 'bash ./install.sh'
