@@ -13,12 +13,17 @@ unzip ZenithProxy-launcher-linux-amd64.zip
 
 ZENITH_PATH='/root/ZenithProxy'
 
-cd /root/ZenithProxy 
+cd $ZENITH_PATH
+
 git clone https://github.com/boxyfour/autozenith 
+
 cd autozenith 
+
 mv src/assets $ZENITH_PATH 
 
-cd "$ZENITH_PATH/autozenith"
+ls -a
+
+cd "$ZENITH_PATH/assets"
 
 python3 -m venv venv
 

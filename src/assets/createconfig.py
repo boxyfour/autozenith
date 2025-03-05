@@ -31,16 +31,17 @@ def create_config(token, channel, role, relaychannel):
                 "channelId": relaychannel
             }
 
-    current_dir = os.getcwd()
+    target_dir = '/root/ZenithProxy/'
 
-    parent_dir = os.path.dirname(current_dir)
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir)
 
-    os.chdir(parent_dir)
+    config_file_path = os.path.join(target_dir, 'config.json')
 
-    with open("config.json", "w") as f:
+    with open(config_file_path, "w") as f:
         f.write(json.dumps(config, indent=2))
 
-        print("config.json written successfully!")
+    print(f"config.json written successfully to {config_file_path}")
 
 
 args = sys.argv
