@@ -5,6 +5,7 @@
 cd /root 
 mkdir ZenithProxy 
 cd ZenithProxy 
+
 wget https://github.com/rfresh2/ZenithProxy/releases/download/launcher-v3/ZenithProxy-launcher-linux-amd64.zip
 unzip ZenithProxy-launcher-linux-amd64.zip
 
@@ -12,7 +13,7 @@ unzip ZenithProxy-launcher-linux-amd64.zip
 
 ZENITH_PATH='/root/ZenithProxy/'
 
-cd '$ZENITH_PATH/autozenith'
+cd "$ZENITH_PATH/autozenith"
 
 python3 -m venv venv
 

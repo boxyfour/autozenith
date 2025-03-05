@@ -32,9 +32,13 @@ class YamlHelper:
     
     
     def edit_config(self, index):
-        channel, token, role = self.return_fields(index)
-        modified_cloud_config = self.cloud_config
+        fields = self.return_fields(index)
+        
+        channel = fields["channel"]
+        token = fields["token"]
+        role = fields["role"]
 
+        modified_cloud_config = self.cloud_config
         modified_cloud_config = modified_cloud_config.replace('TOKEN', token)
         modified_cloud_config = modified_cloud_config.replace('CHANNEL', str(channel))
         modified_cloud_config = modified_cloud_config.replace('ROLE', str(role))
