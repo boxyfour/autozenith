@@ -9,11 +9,8 @@ packages:
   - python3-pip
   - python3-venv
 runcmd:
-  - [runuser, -l, root, -c, 'chsh -s /usr/bin/zsh root']
-  - 'cd /root && wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh && chmod +x install.sh'
-  - [runuser, -l, root, -c, '/usr/bin/zsh -c "/root/install.sh --unattended"']
-  - 'cd /root && git clone https://github.com/boxyfour/autozenith && cd autozenith/src/assets/install.sh'
-  - [runuser, -l, root, -c, '/usr/bin/zsh -c "/root/autozenith/src/assets/install.sh"']
+  - 'cd /root && git clone https://github.com/boxyfour/autozenith && cd autozenith/src/assets && chmod +x install.sh'
+  - [runuser, -l, root, -c, '/bin/bash -c "/root/autozenith/src/assets/install.sh"']
   - 'cd /root/ZenithProxy/assets'
   - 'venv/bin/python3 createconfig.py TOKEN CHANNEL ROLE'
   - 'cd /root/ZenithProxy && rm -r assets'
