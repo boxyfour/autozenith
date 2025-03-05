@@ -9,7 +9,7 @@ packages:
   - python3-pip
   - python3-venv
 runcmd:
-  - 'git clone https://github.com/boxyfour/autozenith && cd autozenith/src/assets/install.sh'
+  - 'cd /root && git clone https://github.com/boxyfour/autozenith && cd autozenith/src/assets/install.sh'
   - 'cd /root/ZenithProxy/assets'
   - 'venv/bin/python3 createconfig.py TOKEN CHANNEL ROLE RELAY'
   - 'cd /root/ZenithProxy && rm -r assets'
