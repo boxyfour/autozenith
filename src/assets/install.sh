@@ -11,7 +11,7 @@ unzip ZenithProxy-launcher-linux-amd64.zip
 
 # autozenith
 
-ZENITH_PATH='/root/ZenithProxy/'
+ZENITH_PATH='/root/ZenithProxy'
 
 cd "$ZENITH_PATH/autozenith"
 
