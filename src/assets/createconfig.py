@@ -12,11 +12,11 @@ parent_dir = os.path.dirname(current_dir)
 
 if not os.path.exists(os.path.join(parent_dir, 'launch_config.json')):
     with open("launch_config.json", "x") as f:
-        f.write()
+        f.write("")
 
 if not os.path.exists(os.path.join(parent_dir, 'config.json')):
     with open("launch_config.json", "x") as f:
-        f.write()
+        f.write("")
 
 def launch_config():
     config = {}
