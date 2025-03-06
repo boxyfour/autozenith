@@ -5,6 +5,19 @@ import sys
 
 # TODO: FIX
 
+
+current_dir = os.getcwd()
+
+parent_dir = os.path.dirname(current_dir)
+
+if not os.path.exists(os.path.join(parent_dir, 'launch_config.json')):
+    with open("launch_config.json", "x") as f:
+        f.write()
+
+if not os.path.exists(os.path.join(parent_dir, 'config.json')):
+    with open("launch_config.json", "x") as f:
+        f.write()
+
 def launch_config():
     config = {}
     release_channel = "linux"
@@ -18,10 +31,12 @@ def launch_config():
     config["repo_owner"] = "rfresh2"
     config["repo_name"] = "ZenithProxy"
 
+    os.chdir(parent_dir)
+
     with open("launch_config.json", "w") as f:
         f.write(json.dumps(config, indent=2))
 
-        print("config.json written successfully!")
+        print("launch_config.json written successfully!")
 
 def create_config(token, channel, role, relaychannel):
     config = {}
@@ -52,12 +67,6 @@ def create_config(token, channel, role, relaychannel):
                 "enable": True,
                 "channelId": relaychannel
             }
-
-    
-
-    current_dir = os.getcwd()
-
-    parent_dir = os.path.dirname(current_dir)
 
     os.chdir(parent_dir)
 
