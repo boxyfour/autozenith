@@ -1,22 +1,34 @@
 import requests
 import json
 import os
-import subprocess
 import sys
 
-import os
-import subprocess
+# TODO: FIX
 
+def launch_config():
+    config = {}
+    release_channel = "linux"
+    minecraft_version = "1.21.0"
+    
+    config["auto_update"] = True
+    config["auto_update_launcher"] = True
+    config["release_channel"] = release_channel + "." + minecraft_version
+    config["version"] = "0.0.0"
+    config["local_version"] = "0.0.0"
+    config["repo_owner"] = "rfresh2"
+    config["repo_name"] = "ZenithProxy"
 
+    with open("launch_config.json", "w") as f:
+        f.write(json.dumps(config, indent=2))
+
+        print("config.json written successfully!")
 
 def create_config(token, channel, role, relaychannel):
-
-    channel = int(channel)
-    role = int(role)
-
     config = {}
+    
     if relaychannel == None:
         print("woah")
+        
     ip = requests.get("https://api.ipify.org", timeout=10)
 
     proxy_address = ip.text
@@ -41,18 +53,18 @@ def create_config(token, channel, role, relaychannel):
                 "channelId": relaychannel
             }
 
-    target_dir = '/root/ZenithProxy/'
+    
 
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
+    current_dir = os.getcwd()
 
-    config_file_path = os.path.join(target_dir, 'launch_config.json')
+    parent_dir = os.path.dirname(current_dir)
 
-    with open(config_file_path, "w") as f:
+    os.chdir(parent_dir)
+
+    with open("config.json", "w") as f:
         f.write(json.dumps(config, indent=2))
 
-
-    print(f"config.json written successfully to ")
+        print("config.json written successfully!")
 
 
 args = sys.argv
