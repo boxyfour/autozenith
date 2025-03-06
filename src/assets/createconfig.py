@@ -15,7 +15,7 @@ if not os.path.exists(os.path.join(parent_dir, 'launch_config.json')):
         f.write("")
 
 if not os.path.exists(os.path.join(parent_dir, 'config.json')):
-    with open("launch_config.json", "x") as f:
+    with open("config.json", "x") as f:
         f.write("")
 
 def launch_config():
