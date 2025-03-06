@@ -8,6 +8,7 @@ packages:
   - python3
   - python3-pip
   - python3-venv
+  - openjdk-21-jdk
 runcmd:
   - 'cd /root && git clone https://github.com/boxyfour/autozenith && cd autozenith/src/assets && chmod +x install.sh'
   - [runuser, -l, root, -c, '/bin/bash -c "/root/autozenith/src/assets/install.sh"']
@@ -16,3 +17,4 @@ runcmd:
   - 'cd /root/ZenithProxy && rm -r assets'
   - 'tmux new-session -d -s session' 
   - 'tmux new-window -t session -d "bash ./launch.sh"'
+  - 'reboot'
