@@ -16,7 +16,7 @@ After=network.target
 [Service]
 ExecStart={command}
 Restart=always
-User={os.getlogin()}
+User=root
 
 [Install]
 WantedBy=multi-user.target
