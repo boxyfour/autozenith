@@ -36,7 +36,7 @@ def create_config(token, channel, role, relaychannel):
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
 
-    config_file_path = os.path.join(target_dir, 'config.json')
+    config_file_path = os.path.join(target_dir, 'launch_config.json')
 
     with open(config_file_path, "w") as f:
         f.write(json.dumps(config, indent=2))
