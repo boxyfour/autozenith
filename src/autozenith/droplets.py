@@ -15,8 +15,6 @@ class Droplet:
         
         return self.client.droplets.list()
 
-
-
     def wipe_droplets(self):
         projects = self.return_projects()
         ids = []

@@ -16,5 +16,4 @@ runcmd:
   - 'venv/bin/python3 createconfig.py TOKEN CHANNEL ROLE'
   - 'cd /root/ZenithProxy && rm -r assets'
   - 'tmux new-session -d -s session' 
-  - 'tmux new-window -t session -d "bash ./launch.sh"'
-  - 'reboot'
+  - 'tmux new-window -t session -d "/bin/bash /root/ZenithProxy/launch.sh"'
