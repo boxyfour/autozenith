@@ -10,6 +10,10 @@ import subprocess
 
 
 def create_config(token, channel, role, relaychannel):
+
+    channel = int(channel)
+    role = int(role)
+
     config = {}
     if relaychannel == None:
         print("woah")
@@ -37,18 +41,20 @@ def create_config(token, channel, role, relaychannel):
                 "channelId": relaychannel
             }
 
-    target_dir = '/root/ZenithProxy/'
+    # target_dir = '/root/ZenithProxy/'
 
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
+    # if not os.path.exists(target_dir):
+    #     os.makedirs(target_dir)
 
-    config_file_path = os.path.join(target_dir, 'launch_config.json')
-
-    with open(config_file_path, "w") as f:
-        f.write(json.dumps(config, indent=2))
+    # config_file_path = os.path.join(target_dir, 'launch_config.json')
 
 
-    print(f"config.json written successfully to {config_file_path}")
+    print(config)
+    # with open(config_file_path, "w") as f:
+    #     f.write(json.dumps(config, indent=2))
+
+
+    print(f"config.json written successfully to ")
 
 
 args = sys.argv
