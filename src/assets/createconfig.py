@@ -77,4 +77,5 @@ if len(args) > 5:
 else:
     relay = None
 
+launch_config()
 create_config(args[1], args[2], args[3], relay)
