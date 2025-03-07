@@ -15,4 +15,4 @@ runcmd:
   - 'cd /root/ZenithProxy/assets'
   - 'venv/bin/python3 createconfig.py TOKEN CHANNEL ROLE'
   - 'cd /root/ZenithProxy && rm -r assets'
-  - '/root/autozenith/src/assets/tmux.sh'
+  - 'reboot'
