@@ -17,7 +17,8 @@ Afterwards, provide `droplet-amount` (the amount of droplets / servers), `drople
 Create the amount of tokens, channels, etc, for the discord bot, and place them into the config file like how the example says to.
 
 Afterwards, go the the droplet homepage on digital ocean, and ssh into each droplet. Reset the password, log in, and run:
-```tmux
+```
+tmux
 cd /root/ZenithProxy
 ./launch
 ```
